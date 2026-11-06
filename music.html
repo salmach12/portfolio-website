@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Music — Salma Choukrallah</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600&family=Caveat:wght@500;600;700&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-mark">Salma Choukrallah</div>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="code.html">Code</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="films.html">Films</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<section id="music">
+  
+  <h2 class="section-title">Music</h2>
+  <p class="section-intro">Favorite artists <span aria-hidden="true"> ♡</span></p>
+
+  <div class="vinyl-row">
+    <div class="vinyl">
+      <div class="vinyl-disc">
+        <img src="images/oasis.jpg" alt="" class="vinyl-img">
+      </div>
+      <p>[ oasis ]</p>
+    </div>
+
+    <div class="vinyl">
+      <div class="vinyl-disc">
+        <img src="images/beatles.jpg" alt="" class="vinyl-img">
+      </div>
+      <p>[ the beatles ]</p>
+    </div>
+
+    <div class="vinyl">
+      <div class="vinyl-disc">
+        <img src="images/smiths.jpg" alt="" class="vinyl-img">
+      </div>
+      <p>[ the smiths ]</p>
+    </div>
+
+    <a class="vinyl" id="cassette" href="https://open.spotify.com/playlist/2KoOAudLfdl1E1sksBzME9" target="_blank" rel="noopener noreferrer">
+      <div class="cassette-body" aria-hidden="true"><div class="reel"></div><div class="reel"></div></div>
+      <p>▶ Check my playlist <span aria-hidden="true">🎧 ♡</span></p>
+    </a>
+  </div>
+</section>
+
+
+<script>
+  // Toggle mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks) {
+    navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+  }
+</script>
+
+</body>
+</html>

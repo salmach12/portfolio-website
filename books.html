@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Books — Salma Choukrallah</title>
+<meta name="description" content="My bookshelf: what I have read and what I am reading.">
+<meta name="theme-color" content="#eee4c7">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salma Choukrallah">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:image" content="https://REPLACE-YOUR-SITE-URL/images/og-image.jpg">
+<meta property="og:url" content="https://REPLACE-YOUR-SITE-URL/{{FILE}}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,wght@0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fixes.css">
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="nav-mark">Salma Choukrallah</div>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="code.html">Code</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="films.html">Films</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+
+<section id="books">
+  <p class="section-tag">The bookshelf</p>
+  <h1 class="section-title">What I've been reading</h1>
+  <p class="section-intro">Click a book to see my thoughts about it <span aria-hidden="true">✧ ✦</span></p>
+
+  <div class="shelf">
+    <!-- BOOK 1 -->
+    <div class="book">
+      <button type="button" class="card-toggle" aria-expanded="false" aria-label="Tuesdays with Morrie: show my note"></button>
+      <div class="book-cover">
+        <img src="images/twm.jpg" alt="Cover of Tuesdays with Morrie">
+      </div>
+      <div class="book-meta">
+        <p class="status">Favourite book</p>
+        <p class="author">— Mitch Albom —</p>
+      </div>
+      <div class="book-note">Once you learn how to die, you learn how to live-ish.</div>
+    </div>
+
+    <!-- BOOK 2 -->
+    <div class="book">
+      <button type="button" class="card-toggle" aria-expanded="false" aria-label="Almond by Sohn Won-pyung: show my note"></button>
+      <div class="book-cover">
+        <img src="images/almond.jpg" alt="Cover of Almond" loading="lazy" decoding="async">
+      </div>
+      <div class="book-meta">
+        <p class="status">Finished reading</p>
+        <p class="author">— Sohn Won-pyung —</p>
+      </div>
+      <div class="book-note">Being human isn't about feeling perfectly. It's about showing up for someone anyway.</div>
+    </div>
+
+    <!-- BOOK 3 -->
+    <div class="book">
+      <button type="button" class="card-toggle" aria-expanded="false" aria-label="Pride and Prejudice by Jane Austen: show my note"></button>
+      <div class="book-cover">
+        <img src="images/pp.jpg" alt="Cover of Pride and Prejudice" loading="lazy" decoding="async">
+      </div>
+      <div class="book-meta">
+        <p class="status">On the shelf</p>
+        <p class="author">— Jane Austen —</p>
+      </div>
+      <div class="book-note">I'm trying to finish it.</div>
+    </div> 
+  </div>
+
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+
+<script>
+  document.querySelectorAll('section').forEach(s => s.classList.add('visible'));
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks) {
+    navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+  }
+  document.querySelectorAll('.book').forEach(b=>{
+    b.addEventListener('click', ()=> b.classList.toggle('open'));
+  });
+  document.addEventListener('mousemove', (e)=>{
+    if(Math.random() > 0.85){
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.textContent = ['✦','✧','★','☆','✿'][Math.floor(Math.random()*5)];
+      s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+      s.style.color = ['#f4b8d0','#c9b6e4','#a8d0e6','#f7e6a8'][Math.floor(Math.random()*4)];
+      document.body.appendChild(s); setTimeout(()=> s.remove(), 900);
+    }
+  });
+</script>
+
+</body>
+</html>

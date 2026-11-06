@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photography — Salma Choukrallah</title>
+<meta name="description" content="Film and digital photos of ordinary moments.">
+<meta name="theme-color" content="#eee4c7">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Salma Choukrallah">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{DESCRIPTION}}">
+<meta property="og:image" content="https://REPLACE-YOUR-SITE-URL/images/og-image.jpg">
+<meta property="og:url" content="https://REPLACE-YOUR-SITE-URL/{{FILE}}">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,wght@0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/fixes.css">
+</head>
+<body>
+<nav aria-label="Main">
+  <div class="nav-mark">Salma Choukrallah</div>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="code.html">Code</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="films.html">Films</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+<main id="main">
+
+  <section id="photos">
+    <p class="section-tag">Things I thought were worth remembering</p>
+    <h2 class="section-title">Photography</h2>
+    <p class="section-intro">Hover a photo for the memory behind it.</p>
+    
+    <div class="photo-scatter">
+      <!-- Existing 5 photos -->
+      <div class="pframe"><div class="washi"></div><div class="pph"><img src="images/photo1.jpg" alt="photo"></div><div class="cap">[ ❤︎ ]</div></div>
+      <div class="pframe"><div class="washi blue"></div><div class="pph"><img src="images/photo2.jpg" alt="photo"></div><div class="cap">[ ♥︎ ]</div></div>
+      <div class="pframe"><div class="washi pink"></div><div class="pph"><img src="images/photo3.jpg" alt="photo"></div><div class="cap">[ ♡ ]</div></div>
+      <div class="pframe"><div class="washi"></div><div class="pph"><img src="images/photo4.jpg" alt="photo"></div><div class="cap">[ ♡⃝ ]</div></div>
+      <div class="pframe"><div class="washi blue"></div><div class="pph"><img src="images/photo5.jpg" alt="photo"></div><div class="cap">[ ❥ ]</div></div>
+      
+      <!-- 4 NEW photo slots -->
+      <div class="pframe"><div class="washi pink"></div><div class="pph"><img src="images/photo6.jpg" alt="photo"></div><div class="cap">[ ✦ ]</div></div>
+      <div class="pframe"><div class="washi"></div><div class="pph"><img src="images/photo7.jpg" alt="photo"></div><div class="cap">[ ✧ ]</div></div>
+      <div class="pframe"><div class="washi blue"></div><div class="pph"><img src="images/photo8.jpg" alt="photo"></div><div class="cap">[ ★ ]</div></div>
+      <div class="pframe"><div class="washi pink"></div><div class="pph"><img src="images/photo9.jpg" alt="photo"></div><div class="cap">[ ☆ ]</div></div>
+          <div class="pframe"><div class="washi"></div><div class="pph"><img src="images/photo10.jpg" alt="photo"></div><div class="cap">[ ✧ ]</div></div>
+      <div class="pframe"><div class="washi blue"></div><div class="pph"><img src="images/photo11.jpg" alt="photo"></div><div class="cap">[ ★ ]</div></div>
+      <div class="pframe"><div class="washi pink"></div><div class="pph"><img src="images/photo12.jpg" alt="photo"></div><div class="cap">[ ☆ ]</div></div>
+    </div>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/main.js"></script>
+</body>
+</html>
+ <script document.querySelectorAll('section').forEachs => s.classList.add('visible');
+
+  if (!sessionStorage.getItem('visitorName')) {
+    window.location.href = 'welcome.html';
+  }
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks) {
+    navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> navLinks.classList.remove('open')));
+  }
+
+  document.addEventListener('mousemove', (e)=>{
+    if(Math.random() > 0.85){
+      const s = document.createElement('div');
+      s.className = 'sparkle';
+      s.textContent = ['✦','✧','★','☆','✿'][Math.floor(Math.random()*5)];
+      s.style.left = e.clientX + 'px'; s.style.top = e.clientY + 'px';
+      s.style.color = ['#f4b8d0','#c9b6e4','#a8d0e6','#f7e6a8'][Math.floor(Math.random()*4)];
+      document.body.appendChild(s); setTimeout(()=> s.remove(), 900);
+    }
+  });
+</script>
+
+</body>
+</html>

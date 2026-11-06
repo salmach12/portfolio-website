@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code & Projects — Salma Choukrallah</title>
+<meta name="theme-color" content="#eee4c7">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,wght@0,500;0,600;1,400;1,500&family=Work+Sans:wght@400;500;600;700&family=VT323&display=swap" rel="stylesheet">
+
+<!-- Add Devicon for the tech logos -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="nav-mark">Salma Choukrallah</div>
+  <button class="nav-toggle" id="navToggle" type="button" aria-label="Menu">☰</button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="code.html">Code</a></li>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="books.html">Books</a></li>
+    <li><a href="photos.html">Photos</a></li>
+    <li><a href="films.html">Films</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<main id="main">
+    <!-- THE NEW DESKTOP LAYOUT -->
+    <div class="retro-layout">
+      
+      <!-- TOP ROW: TERMINAL & PROJECTS -->
+      <div class="top-row">
+        
+        <!-- 1. TERMINAL (LEFT) -->
+        <div class="retro-window terminal-highlight">
+          <div class="window-titlebar">
+            <span>Command Prompt</span>
+            <div class="window-controls">
+              <span>_</span><span>□</span><span>X</span>
+            </div>
+          </div>
+          <div class="terminal-body" id="termBody" role="log">
+      
+            <div>C:\SALMA> TYPE 'help' TO SEE </div>
+          </div>
+          <div class="terminal-input-row">
+            <span>C:\SALMA&gt;</span>
+            <input id="termInput" type="text" autocomplete="off" placeholder="try typing 'help' here...">
+          </div>
+        </div>
+
+        <!-- 2. PROJECTS (RIGHT) -->
+        <div class="retro-window">
+          <div class="window-titlebar">
+            <span>projects.exe</span>
+            <div class="window-controls">
+              <span>_</span><span>□</span><span>X</span>
+            </div>
+          </div>
+          <div class="projects-body">
+            <div class="project-item">
+              <h3>Portfolio Website</h3>
+              <p class="tech">HTML, CSS, JS</p>
+              <p class="desc">A multi-page personal site with an interactive terminal.</p>
+              <a href="https://github.com/salmach12" target="_blank" class="project-link">[Open GitHub ↗]</a>
+            </div>
+            <div class="project-item">
+              <h3>Recursion Challenge</h3>
+              <p class="tech">Python</p>
+              <p class="desc">Solved an input-processing problem without loops, using recursion and edge cases.</p>
+            </div>
+            <div class="project-item">
+              <h3>API Client</h3>
+              <p class="tech">Python · HTTP</p>
+              <p class="desc">Generates a time-based OTP and sends a JSON POST request with Basic Auth.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM ROW: SKILLS -->
+      <div class="bottom-row">
+        <div class="retro-window">
+          <div class="window-titlebar">
+            <span>skills.txt - Notepad</span>
+            <div class="window-controls">
+              <span>_</span><span>□</span><span>X</span>
+            </div>
+          </div>
+          <div class="skills-body">
+            <ul class="pixel-skill-list">
+              <li><i class="devicon-python-plain"></i> <span class="code-line">>> </span> Python</li>
+              <li><i class="devicon-javascript-plain"></i> <span class="code-line">>> </span> JavaScript</li>
+              <li><i class="devicon-html5-plain"></i> <span class="code-line">>> </span> HTML & CSS</li>
+              <li><i class="devicon-git-plain"></i> <span class="code-line">>> </span> Git & GitHub</li>
+              <li><i class="devicon-cloudflare-plain"></i> <span class="code-line">>> </span> Cloudflare</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  if(navToggle && navLinks) {
+    navToggle.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+  }
+
+  const termBody = document.getElementById('termBody');
+  const termInput = document.getElementById('termInput');
+  if (termBody && termInput) {
+    const responses = {
+      help: "available commands: about, projects, skills, books, coffee",
+      about: "third-year software engineering student at Sichuan University.",
+      projects: "Check the window on the right to see my latest work!",
+      skills: "Python, JavaScript, HTML/CSS, Git, REST APIs.",
+      books: "My favourite book is 'Tuesdays with Morrie' by Mitch Albom.",
+      coffee: "Dark roast, less sugar, probably a third cup today."
+    };
+    function printLine(text){
+      const d = document.createElement('div');
+      d.textContent = text;
+      termBody.appendChild(d);
+      termBody.scrollTop = termBody.scrollHeight;
+    }
+    termInput.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter'){
+        const cmd = termInput.value.trim().toLowerCase();
+        if(cmd){
+          printLine('C:\\SALMA> ' + cmd);
+          printLine(responses[cmd] || 'command not found: ' + cmd + " — try 'help'");
+        }
+        termInput.value = '';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
